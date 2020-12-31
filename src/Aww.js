@@ -71,3 +71,46 @@ export const CreateBoardButton = () =>
         .catch(console.log);
     },
   });
+
+export const LookupBoardButton = () =>
+  OnClickButton({
+    label: "Look Up Board",
+    callback: (e) => {
+      let boardId = prompt("What is the board's ID?", "");
+      axios
+        .post("https://awwapp.com/api/v2/admin/board/" + boardId, {
+          secret: secretKey,
+        })
+        .then(console.log)
+        .catch(console.log);
+    },
+  });
+
+export const ListOperationsButton = () =>
+  OnClickButton({
+    label: "List Operations with Board",
+    callback: (e) => {
+      let boardId = prompt("What is the board's ID?", "");
+      axios
+        .post("https://awwapp.com/api/v2/admin/board/" + boardId + "/ops", {
+          secret: secretKey,
+        })
+        .then(console.log)
+        .catch(console.log);
+    },
+  });
+
+export const DeleteBoardButton = () =>
+  OnClickButton({
+    label: "Delete a Board",
+    callback: (e) => {
+      let boardId = prompt("What is the board's ID?", "");
+      axios
+        .post("https://awwapp.com/api/v2/admin/boards/" + boardId + "/delete", {
+          secret: secretKey,
+          onlyOps: true,
+        })
+        .then(console.log)
+        .catch(console.log);
+    },
+  });

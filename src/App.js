@@ -2,7 +2,14 @@ import React from "react";
 
 import { Hook, Console, Decode } from "console-feed";
 
-import { GetBoardsButton, GetThumbnailButton, CreateBoardButton } from "./Aww";
+import {
+  GetBoardsButton,
+  GetThumbnailButton,
+  CreateBoardButton,
+  LookupBoardButton,
+  ListOperationsButton,
+  DeleteBoardButton,
+} from "./Aww";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,6 +38,9 @@ class App extends React.Component {
         <GetBoardsButton />
         <GetThumbnailButton />
         <CreateBoardButton />
+        <LookupBoardButton />
+        <ListOperationsButton />
+        <DeleteBoardButton />
         <Console logs={this.state.logs} variant="light" />
       </div>
     );
